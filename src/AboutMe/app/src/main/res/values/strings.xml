@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">About Me</string>
+    <string name="bio">A grey worm, major in computer science, software engineer at Tiger IT Bangladesh Limited. I like to toss all kinds of things, love almost everything. This site was built in 2018. After more than four years of planning, I finally started this static site. Anyway, this is the place to share what you see and hear.</string>
+    <string name="name">Foysal Ahamed</string>
+    <string name="yellow_star">Yellow Star</string>
+    <string name="what_is_your_nickname">What is your Nickname</string>
+    <string name="done">Done</string>
 </resources>
