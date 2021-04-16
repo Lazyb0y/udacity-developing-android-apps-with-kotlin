@@ -71,6 +71,7 @@ class GameFragment : Fragment() {
         viewModel.eventGameFinish.observe(viewLifecycleOwner, Observer { hasFinished ->
             if (hasFinished) {
                 gameFinished()
+                viewModel.onGameFinishComplete()
             }
         })
 
