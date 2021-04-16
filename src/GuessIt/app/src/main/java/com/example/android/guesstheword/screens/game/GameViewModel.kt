@@ -49,7 +49,6 @@ class GameViewModel : ViewModel() {
         resetList()
         nextWord()
 
-        _word.value = ""
         _score.value = 0
         _eventGameFinish.value = false;
 
