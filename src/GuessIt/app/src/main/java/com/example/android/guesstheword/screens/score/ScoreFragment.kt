@@ -37,6 +37,8 @@ class ScoreFragment : Fragment() {
     private lateinit var viewModel: ScoreViewModel
     private lateinit var viewModelFactory: ScoreViewModelFactory
 
+    private lateinit var binding: ScoreFragmentBinding
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -44,22 +46,19 @@ class ScoreFragment : Fragment() {
     ): View? {
 
         // Inflate view and obtain an instance of the binding class.
-        val binding: ScoreFragmentBinding = DataBindingUtil.inflate(
+        binding = DataBindingUtil.inflate(
                 inflater,
                 R.layout.score_fragment,
                 container,
                 false
         )
+        binding.lifecycleOwner = this
 
         val finalScore = ScoreFragmentArgs.fromBundle(arguments!!).score
 
         viewModelFactory = ScoreViewModelFactory(finalScore)
         viewModel = ViewModelProvider(this, viewModelFactory).get(ScoreViewModel::class.java)
         binding.scoreViewModel = viewModel
-
-        viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
-            binding.scoreText.text = newScore.toString()
-        })
 
         viewModel.eventPlayAgain.observe(viewLifecycleOwner, Observer { playAgain ->
             if (playAgain) {
